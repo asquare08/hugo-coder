@@ -1,4 +1,5 @@
 <nav class="navigation">
+  {{ template "_internal/google_analytics.html" . }}
   <section class="container">
     <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">
       {{ .Site.Title }}
