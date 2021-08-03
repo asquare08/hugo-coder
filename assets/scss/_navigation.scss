@@ -1,6 +1,10 @@
 .navigation {
-  height: 6.0rem;
+  height: 7.0rem;
   width: 100%;
+  position: sticky;
+  background-color: $bg-color;
+  top: 0;
+  z-index: 100;
   a, span {
     display: inline;
     font-size: 1.6rem;
