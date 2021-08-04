@@ -22,5 +22,30 @@
         {{ end }}
       {{ end }}
     </section>
+    <section class="container", id="custom-container">
+        {{ with .Site.Params.social }}
+        <ul>
+        {{ range sort . "weight" }}
+            {{ if .icon }}
+            <li>
+                <a href="{{ .url | safeURL }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }} {{ if .type }}type="{{ .type }}"{{ end }}>
+                <i class="{{ .icon }}" aria-hidden="true"></i>
+                </a>
+            </li>
+            {{ else }}
+            <li>
+                <a href="{{ .url | safeURL }}" aria-label="{{ .name }}" {{ if .rel }}rel="{{ .rel }}"{{ end }} {{ if .target }}target="{{ .target }}"{{ end }}>{{ .name }}</a>
+            </li>
+            {{ end }}
+        {{ end }}
+        </ul>
+        {{ end }}
+    </section>
   </footer>
+  <script>
+      var element = document.getElementById("custom-container");
+      if (window.location.pathname === '/') {
+        element.style.display = "none"
+      }
+  </script>
 {{ end }}
