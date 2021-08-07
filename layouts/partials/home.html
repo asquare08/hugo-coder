@@ -27,5 +27,22 @@
       {{ end }}
     </ul>
     {{ end }}
+    <div id="mobile-screen", class="mobile-screen">
+      {{ with .Site.Menus.main}}
+      <ul>
+        {{ range sort . }}
+        <li>
+          <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
   </div>
 </section>
+<script>
+  var element = document.getElementById("mobile-screen");
+  if (!window.matchMedia('(max-width: 768px)').matches) {
+        element.style.display = "none"
+  }
+</script>

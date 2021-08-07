@@ -147,7 +147,6 @@
         position: relative;
         a {
           color: $fg-color;
-          text-transform: uppercase;
           margin-left: 1.0rem;
           margin-right: 1.0rem;
           font-size: 1.6rem;
@@ -156,13 +155,19 @@
             color: $link-color;
           }
           @media only screen and (max-width : 768px) {
-            font-size: 1.4rem;
+            font-size: 2rem;
           }
           i {
             font-size: 3.2rem;
           }
         }
       }
+    }
+    .mobile-screen {
+        li {
+            display: block;
+            margin-bottom: 1rem;
+        }
     }
   }
 
